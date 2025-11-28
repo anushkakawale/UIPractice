@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            height: 100vh;
+        }
+        .container{
+            border: 2px solid black;
+        }
+    </style>
+    </head>
+  <body>
+    <div class="container">
+        <div class="counter">
+            <p id="count" class="text-center">0</p>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-success" onclick="increment()">Increment</button>
+            <button class="btn btn-success" onclick="decrement()">Decrement</button>
+        </div>
+        <div class="clicks text-center mt-5">
+            <p>Clicks On Increment : <span id="incCount">0</span></p>
+            <p>Clicks On Increment : <span id="decCount">0</span></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        let counter = 0, counti = 0, countd = 0;
+        const count = document.getElementById("count");
+        const intCount = document.getElementById("intCount");
+        const decCount = document.getElementById("decCount");
+        function increment(){
+            counter++;
+            counti = (counti>=10) ? 0 : counti+1;
+            update();
+        }
+        function decrement(){
+            counter = counter>0 ? counter-1 : 0;
+            countd = (countd>=10) ? 0: countd + 1;
+            update();
+        }
+        function update(){
+            count.textContent = counter;
+            incCount.textContent = counti;
+            decCount.textContent = countd;
+        }
+    </script>
+</body>
+</html>
